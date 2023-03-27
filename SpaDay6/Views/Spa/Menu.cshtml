@@ -4,24 +4,57 @@
 @{
 }
 
-<div id="clientProfile">
+@*<div id="clientProfile">
 </div>
 <div id="servicesMenu">
-</div>
+</div>*@
 
 <h1>Fancy Spa</h1>
 <div id="clientProfile">
+    <h3>Client profile</h3>
+    <h5>Name: </h5>
+    <p>@ViewBag.name</p>
 </div>
 <div id="servicesMenu">
 
     <h5>Facial Treatments</h5>
-    <p>Your //TODO: pass the skintype value in here// skin type is best suited to the follow facial types:</p>
+    <p>Your @*//TODO: pass the skintype value in here//*@ @ViewBag.skintype skin type is best suited to the follow facial types:</p>
 
     <ul>
-        //TODO: iterate through appropriate facial treatments
+        @*TODO: iterate through appropriate facial treatments*@
+        @foreach (string facial in ViewBag.facials)
+        {
+            <li>@facial</li>
+        }
     </ul>
 
     <h5>Nail Services</h5>
-    // TODO: display a description for the nail service selected
-
+    @*TODO: display a description for the nail service selected*@
+    @if (ViewBag.manipedi == "manicure")
+    {
+        <h6>Manicure: </h6>
+        <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+    }
+    else if (ViewBag.manipedi == "pedicure")
+    {
+        <h6>Pedicure: </h6>
+        <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+    }
+    else
+    {
+        <h6>Combination Package</h6>
+        <p>Our manicure is a great way to spend 30 minutes of your day! We use shea butter hand cream and the finest gel polish.</p>
+        <br />
+        <p>Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
+    }
+    <div class="centered container">
+        <div class="row">
+            <div class="col-sm squares" id="nails-red">Red</div>
+            <div class="col-sm squares" id="nails-dark-red">Dark Red</div>
+            <div class="col-sm squares" id="nails-pink">Pink</div>
+            <div class="col-sm squares" id="nails-black">Black</div>
+            <div class="col-sm squares" id="nails-blue">Blue</div>
+            <div class="col-sm squares" id="nails-silver">Silver</div>
+        </div>
+    </div>
 </div>

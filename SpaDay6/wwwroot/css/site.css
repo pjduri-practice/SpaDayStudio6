@@ -16,3 +16,37 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/*adding color samples*/
+.centered {
+    align-content: center;
+    text-align: center;
+    font-size: 30px;
+}
+
+#nails-red {
+    background-color: red;
+}
+
+#nails-dark-red {
+    color: white;
+    background-color: darkred;
+}
+
+#nails-blue {
+    color: white;
+    background-color: blue;
+}
+
+#nails-black {
+    color: white;
+    background-color: black;
+}
+
+#nails-pink {
+    background-color: pink;
+}
+
+#nails-silver {
+    background-color: silver;
+}
