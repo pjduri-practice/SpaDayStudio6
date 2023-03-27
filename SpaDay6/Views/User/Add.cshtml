@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*form that accepts inputs for each of the user class properties (username, 
+email, password) including an additional field to verify password*@
+
+<form method="post" action="/user">
+    <div>
+        <label>Username: 
+            <input type="text" name="username" />
+        </label>
+        <label>Email: 
+            <input type="email" name="email" />
+        </label>
+        <label>Password: 
+            <input type="password" name="password" />
+        </label>
+        <label>Confirm Password: 
+            <input type="password" name="verify" />
+        </label>
+    </div>
+    <input type="submit" value="Create User"/>
+</form>
