@@ -4,18 +4,22 @@
 @{
 }
 
+@if (ViewBag.Password != ViewBag.verify)
+{
+    <h3>@ViewBag.error</h3>
+}
 <form method="post" action="/user">
     <label>UserName:
-        <input type="text" name="Username" />
+        <input type="text" name="Username" value="@ViewBag.Username"/>
     </label>
     <label>Email:
-        <input type="email" name="Email" />
+        <input type="email" name="Email" value="@ViewBag.Email"/>
     </label>
     <label>Password:
         <input type="password" name="Password" />
     </label>
     <label>Verify Password
-        <input type="password" name="VerifyPassword" />
+        <input type="password" name="verify" />
     </label>
     <input type="submit" value="Submit"/>
 </form>
