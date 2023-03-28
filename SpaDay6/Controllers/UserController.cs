@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SpaDay6.Models;
 
 namespace SpaDay6.Controllers
 {
@@ -17,5 +18,19 @@ namespace SpaDay6.Controllers
 
             return View();
         }
+
+        public IActionResult SubmitAddUserForm(User newUser, string verify)
+        {
+            if (newUser.Password == verify)
+            {
+                ViewBag.Username = newUser.Username;
+                return View();
+            }
+            else
+            {
+                return View("add");
+            }
+        }
+
     }
 }
