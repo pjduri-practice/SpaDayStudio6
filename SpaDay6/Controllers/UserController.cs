@@ -18,17 +18,17 @@ namespace SpaDay6.Controllers
         [HttpPost("/user")]
         public IActionResult SubmitAddUserForm(User newUser, string verify)
         {
+            ViewBag.user = newUser;
             if (newUser.Password == verify)
             {
+                
                 ViewBag.username = newUser.Username;
                 return View("index");
             }
             else
             {
                 ViewBag.error = "Passwords do not match! Try again!";
-                ViewBag.userName = newUser.Username;
-                ViewBag.eMail = newUser.Email;
-                return View("Add");
+                return View("add");
             }
         }
 

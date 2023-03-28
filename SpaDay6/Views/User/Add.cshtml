@@ -9,18 +9,31 @@ email, password) including an additional field to verify password*@
 
 <form method="post" action="/user">
     <div>
-        <label>Username: 
-            <input type="text" name="username" />
-        </label>
-        <label>Email: 
-            <input type="email" name="email" />
-        </label>
+        @if (ViewBag.error != null)
+        {
+            <h3>@ViewBag.error</h3>
+            <label>Username: 
+                <input type="text" name="username" value="@ViewBag.user.Username"/>
+            </label><br />
+            <label>Email: 
+                <input type="email" name="email" value="@ViewBag.user.Email"/>
+            </label><br />
+        }
+        else
+        {
+            <label>Username: 
+                <input type="text" name="username" />
+            </label><br />
+            <label>Email: 
+                <input type="email" name="email" />
+            </label><br />
+        }
         <label>Password: 
             <input type="password" name="password" />
-        </label>
+        </label><br />
         <label>Confirm Password: 
             <input type="password" name="verify" />
-        </label>
+        </label><br />
     </div>
     <input type="submit" value="Create User"/>
 </form>
